@@ -1,4 +1,5 @@
-
+import ExpenseDate from './ExpenseDate'
+import ExpenseDetails from './ExpenseDetails'
 import './ExpenseItem.css'
 const ExpenseItems = (props) => {
 
@@ -7,11 +8,8 @@ const ExpenseItems = (props) => {
             {
                 props.expenses.map((value) => (
                     <div className="expense-item">
-                        <div>{value.date.toISOString()}</div>
-                        <div className="expense-item__description">
-                            <h2 className='expense-item h2'>{value.title}</h2>
-                        </div>
-                        <div className='expense-item__price ' >{value.amount}</div>
+                        <ExpenseDate date={value.date}/>
+                        <ExpenseDetails title={value.title} amount={value.amount}/>
                     </div>
 
                 )
